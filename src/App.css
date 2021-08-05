@@ -1,4 +1,9 @@
-.custom-signout {
-  width: 50vw;
-  justify-content: center;
+.custom-signout-button {
+  display: flex;
+  width: 33vw;
+  margin-left: 33vw;
+}
+
+.custom-signout-button amplify-button {
+  background-color: cadetblue;
 }

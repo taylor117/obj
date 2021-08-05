@@ -12,7 +12,7 @@ function App() {
       <header>
         <PageList currentDate={currentDate} />
       </header>
-      <AmplifySignOut className="custom-signout" />
+      <AmplifySignOut className="custom-signout-button" />
     </div>
   );
 }

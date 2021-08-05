@@ -2,15 +2,17 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+import PageList from './components/Pages/PageList'
 
 function App() {
+  const currentDate = new Date;
+
   return (
     <div className="App">
       <header>
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>We now have Auth!</h1>
+        <PageList currentDate={currentDate} />
       </header>
-      <AmplifySignOut />
+      <AmplifySignOut className="custom-signout" />
     </div>
   );
 }

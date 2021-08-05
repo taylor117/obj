@@ -1,0 +1,33 @@
+type User @model @key(name: "forUser", fields: ["id"]) {
+  id: ID!
+  username: String!
+  pages: [Page] @connection(keyName: "byUser", fields: ["id"])
+  followers: [User] @connection(keyName: "forUser", fields: ["id"])
+  following: [User] @connection(keyName: "forUser", fields: ["id"])
+}
+
+type Page @model @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  userID: ID!
+  author: User @connection(fields: ["userID"])
+  title: String!
+  date: Int!
+  stickers: [Sticker] @connection(keyName: "stickByPage", fields: ["id"])
+  textBoxes: [TextBox] @connection(keyName: "textByPage", fields: ["id"])
+}
+
+type TextBox @model @key(name: "textByPage", fields: ["pageID"]) {
+  id: ID!
+  pageID: ID!
+  page: Page @connection(fields: ["pageID"])
+  content: String!
+  location: [Int]!
+}
+
+type Sticker @model @key(name: "stickByPage", fields: ["pageID"]) {
+  id: ID!
+  pageID: ID!
+  page: Page @connection(fields: ["pageID"])
+  url: String!
+  location: [Int]!
+}

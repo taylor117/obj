@@ -63,12 +63,26 @@ function Page() {
     function moveSlider() {
         let slider = document.getElementById("tSlider");
 
-        if (currentTool == "text") {
+        if (currentTool === "text") {
+            slider.innerText = "";
             slider.setAttribute('style', "left : 20vw")
-        } else if (currentTool == "draw") {
-            slider.setAttribute('style', "left : 40vw")
+            setTimeout(function(){ slider.innerText = "Text" }, 350);
+        } else if (currentTool === "draw") {
+            slider.innerText = "";
+            slider.setAttribute('style', "left : 32vw")
+            setTimeout(function(){ slider.innerText = "Draw" }, 350);
+        } else if (currentTool === "stamp") {
+            slider.innerText = "";
+            slider.setAttribute('style', "left : 44vw")
+            setTimeout(function(){ slider.innerText = "Stamp" }, 350);
+        } else if (currentTool === "bucket") {
+            slider.innerText = "";
+            slider.setAttribute('style', "left : 56vw")
+            setTimeout(function(){ slider.innerText = "Fill/Bucket" }, 350);
         } else {
-            slider.setAttribute('style', "left : 60vw")
+            slider.innerText = "";
+            slider.setAttribute('style', "left : 68vw")
+            setTimeout(function(){ slider.innerText = "Eraser" }, 350);
         };
     };
 
@@ -77,10 +91,12 @@ function Page() {
         <canvas className="page-content" id="canvas">
         </canvas>
         <div className="tools-hub">
-            <div className="tool-slider" id="tSlider"/>
+            <div className="tool-slider" id="tSlider">Text</div>
             <p className="text-tool" id="text" onClick={() => focusTool("text")}>Text</p>
             <p className="draw-tool" id="draw" onClick={() => focusTool("draw")}>Draw</p>
             <p className="stamp-tool" id="stamp" onClick={() => focusTool("stamp")}>Stamp</p>
+            <p className="bucket-tool" id="bucket" onClick={()=> focusTool("bucket")}>Fill/Bucket</p>
+            <p className="eraser-tool" id="eraser" onClick={()=> focusTool("eraser")}>Eraser</p>
         </div>
     </div>
   );

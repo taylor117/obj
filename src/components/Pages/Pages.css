@@ -1,0 +1,34 @@
+.page-content {
+    background-color: #fceee9;
+    border-radius: 8px;
+    width: 60vw;
+    height: 70vh;
+    margin-left: 20vw;
+    margin-top: 5vh;
+}
+
+.tools-hub {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+}
+
+.tool-slider {
+    background-color: darkgray;
+    width: 20%;
+    height: 50px;
+    opacity: 0.3;
+    border-radius: 8px;
+    position: absolute;
+    left: 20vw;
+}
+
+.tools-hub p {
+    width: 33.3%;
+    text-align: center;
+}

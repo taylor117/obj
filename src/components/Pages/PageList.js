@@ -20,7 +20,7 @@ function PageList({ currentDate }) {
 
   return (
     <div className="page-list">
-      <h1>My Online Bullet Journal</h1>
+      {/* <h1>My Online Bullet Journal</h1> */}
       {startPage ? <Page /> : <button onClick={() => setStartPage(true)}> Start Page! </button> }
     </div>
   );
